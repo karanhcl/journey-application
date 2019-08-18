@@ -11,7 +11,7 @@ Program start from journey application class run from IDE or run with ##JAVA -ja
 Application brief:
 
 Program supports api's to add customer and journey details, I have used two seperate api classes for same purpose.
-Use various java packages as per need of requirement and modular programming approach.
+Follow modular programming approach as per requirement.
 I have placed two input request json, one for customer details and other is for journey details. 
 
 

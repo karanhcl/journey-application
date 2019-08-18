@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import com.book.journey.manager.api.BookCustomerDataController;
 import com.book.journey.manager.api.BookingCustomerDataResponseTO;
 import com.book.journey.manager.api.CustomerTO;
 import com.book.journey.manager.api.ResponseTO;
+import com.book.journey.manager.common.CustomerNotFound;
 import com.book.journey.manager.model.Customer;
 import com.book.journey.manager.service.BookingCustomerDataService;
 
@@ -48,16 +50,12 @@ public class BookCustomerDataRestController implements BookCustomerDataControlle
      * {@inheritDoc}
      */
     @Override
+    @ExceptionHandler(CustomerNotFound.class)
     public ResponseEntity<ResponseTO<Void>> addCustomerDetails(@RequestBody CustomerTO customerTO) {
         ResponseTO responseTO = new ResponseTO();
-        HttpStatus httpStatus= HttpStatus.OK;
-        try {
-            bookingCustomerDataService.addCustomerDetails(customerTO);
-            responseTO.setMessage("Yay!! customer details added");
-        } catch (Exception e) {
-            responseTO.setMessage("Not able to add customer");
-            httpStatus=HttpStatus.INTERNAL_SERVER_ERROR;
-        }
+        HttpStatus httpStatus = HttpStatus.OK;
+        bookingCustomerDataService.addCustomerDetails(customerTO);
+        responseTO.setMessage("Yay!! customer details added");
         return new ResponseEntity<>(responseTO, httpStatus);
 
     }

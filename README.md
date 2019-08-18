@@ -6,7 +6,7 @@ Maven plugin and mysql software should be present or installed.
 How to run application?
 
 Build program with maven command using ## mvn clean install ##.
-Program start from journey application class run from IDE or run with ##JAVA -jar demo-0.0.1-SNAPSHOT.jar##.
+Program start from journey application class run from IDE or run with ##JAVA -jar journey-details-0.0.1-SNAPSHOT.jar##.
 
 Application brief:
 

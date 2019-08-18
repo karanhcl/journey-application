@@ -22,7 +22,9 @@ Request URI:
 please have look on request URI in JAVA api package for more information.
 
 /bookingdata/customer/list (get request, to fetch customer details)
+
 /bookingdata/customer (post request, customer-request json object, to add customer details)
 
 /bookingdata/journey/list (get request, to fetch journey details)
+
 /bookingdata/journey (post request, journey-request json object, to add journey details)

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.book.journey.manager.api.JourneyTO;
-import com.book.journey.manager.common.ExtendedRuntimeException;
+import com.book.journey.manager.common.CustomerNotFound;
 import com.book.journey.manager.common.JourneyPriceCalculation;
 import com.book.journey.manager.converter.JourneyEntityConveter;
 import com.book.journey.manager.model.Customer;
@@ -67,7 +67,7 @@ public class BookingJourneyDataServiceImpl implements BookingJourneyDataService 
             bookingDataJourneyRepository.save(journey);
 
         } else {
-            throw new ExtendedRuntimeException("Customer not exist");
+            throw new CustomerNotFound("Customer not exist");
         }
     }
 

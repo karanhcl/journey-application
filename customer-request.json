@@ -1,0 +1,9 @@
+{
+"customerId":209,
+"customerName":"karan",
+"favouriteRoute":[{
+      "departure":"WAW",
+      "arrival":"DEL1"
+   }],
+"customerType":"VIP"
+}
